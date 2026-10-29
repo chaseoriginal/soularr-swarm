@@ -1,24 +1,23 @@
-version: "3.8"
-
 services:
   soularr:
     image: mrusse08/soularr:latest
     container_name: soularr
     volumes:
-      - data:/data
-      - /media/Multimedia/Incoming/complete/lidarr:/downloads
+    - soularr-swarm_data:/data
+    - /media/Multimedia/Incoming/complete/lidarr:/downloads
     environment:
-      - TZ=America/Chicago
+    - TZ=America/Chicago
     networks:
-      - media
+    - media
     deploy:
       placement:
         constraints:
-          - node.labels.deployment.target.soularr == true
+        - node.labels.deployment.target.soularr == true
       restart_policy:
         condition: any
 networks:
   media:
     external: true
 volumes:
-  data:
+  soularr-swarm_data:
+    name: soularr-swarm_data
