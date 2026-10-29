@@ -8,8 +8,8 @@ deployment and polls this repository for changes.
 | Portainer stack id | 31 |
 | Portainer host | ore-dock-110-4 |
 | Endpoint | - (id -) |
-| Swarm | whofnrgxv5ig |
-| Live service | soularr-swarm_soularr |
+| Swarm | True |
+| Live service | svc:soularr-swarm_soularr |
 | Git repo | https://github.com/chaseoriginal/soularr-swarm |
 | Compose file | `docker-compose.yml` |
 | Auto-update poll | every 900s |
@@ -39,8 +39,8 @@ deployment and polls this repository for changes.
 ## Verifying a deployment
 
 ```bash
-docker service ls --filter name=soularr-swarm_soularr
-docker service inspect soularr-swarm_soularr --format '{{json .Spec.TaskTemplate.ContainerSpec.Mounts}}'
+docker service ls --filter name=svc:soularr-swarm_soularr
+docker service inspect svc:soularr-swarm_soularr --format '{{json .Spec.TaskTemplate.ContainerSpec.Mounts}}'
 ```
 
 A healthy stack shows `1/1` and the same volume names as before.
