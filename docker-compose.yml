@@ -1,6 +1,6 @@
 services:
   soularr:
-    image: mrusse08/soularr:latest
+    image: mrusse08/soularr:latest@sha256:61ee506de5fb1447f3abd4a5a47e2537fad152ddf8c7e0392a36ef00b4f1c3d9
     container_name: soularr
     volumes:
     - soularr-swarm_data:/data
